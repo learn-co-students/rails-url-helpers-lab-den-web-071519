@@ -1,1 +1,9 @@
 <h1><%= @student.to_s %></h1>
+<% case @student.active %>
+<% when true %>
+<p><%=  "This student is currently active."%></p>
+<% when false %>
+<p><%=  "This student is currently inactive."%></p>
+<% end %>
+
+<%= link_to "Toggle status", activate_student_path(@student) %>
